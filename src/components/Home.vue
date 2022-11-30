@@ -1,11 +1,11 @@
 <!-- Class and Style Bindings -->
-<template>
+<!-- <template>
   <div>
     <h1 class="vueStyle">Class and Style Bindings</h1>
-    <!-- Class with Style -->
+    Class with Style
     <h1 v-bind:style="{ color: colorName }">Style Bindings</h1>
     <h1 v-bind:class="{ display: show, vueStyle: show }">Class with Object</h1>
-    <!-- conditional styling -->
+    conditional styling
     <h1 v-bind:class="[checkDisplay ? d : v]">Class with Array</h1>
   </div>
 </template>
@@ -24,9 +24,9 @@ export default {
     };
   },
 };
-</script>
+</script> -->
 
-<style scoped>
+<!-- <style scoped>
 .vueStyle {
   color: orange;
 }
@@ -34,7 +34,45 @@ export default {
   background-color: peru;
   padding: 5px;
 }
-</style>
+</style> -->
+
+<!-- templates -->
+<template>
+  <div>
+    <p v-html="header"></p>
+    <!-- <h1>Template in vue js</h1> -->
+    <!-- 'v-once' only updated once, so on localhost:8081 will display "Shane" but 2nd <h2> will change to "peter" -->
+    <h2 v-once>{{ name }}</h2>
+    <h2>{{ name }}</h2>
+    <button v-bind:disabled="btnDisable" v-on:click="hello">Click me</button>
+    <!-- <p>{{ 1 - 100 }}</p> -->
+    <h3>{{ ok ? "yes" : "no" }}</h3>
+  </div>
+</template>
+
+<script>
+export default {
+  name: "HomeVue",
+  // define properties in data method
+  data() {
+    return {
+      name: "Shane",
+      ok: true,
+      header: "<h1>Template in vue js</h1>",
+      btnDisable: true,
+    };
+  },
+  methods: {
+    // functions defined here
+    hello() {
+      // alert("Hello click");
+      this.name = "peter";
+      // now I can toggle between yes and no
+      this.ok = !this.ok;
+    },
+  },
+};
+</script>
 
 <!-- Composing with component -->
 <!-- <template>
