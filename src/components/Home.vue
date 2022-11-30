@@ -1,5 +1,43 @@
-<!-- Composing with component -->
+<!-- Class and Style Bindings -->
 <template>
+  <div>
+    <h1 class="vueStyle">Class and Style Bindings</h1>
+    <!-- Class with Style -->
+    <h1 v-bind:style="{ color: colorName }">Style Bindings</h1>
+    <h1 v-bind:class="{ display: show, vueStyle: show }">Class with Object</h1>
+    <!-- conditional styling -->
+    <h1 v-bind:class="[checkDisplay ? d : v]">Class with Array</h1>
+  </div>
+</template>
+
+<script>
+export default {
+  name: "HomeVue",
+  data() {
+    return {
+      colorName: "skyblue",
+      show: true,
+      // show: false,
+      d: "display",
+      v: "vueStyle",
+      checkDisplay: false,
+    };
+  },
+};
+</script>
+
+<style scoped>
+.vueStyle {
+  color: orange;
+}
+.display {
+  background-color: peru;
+  padding: 5px;
+}
+</style>
+
+<!-- Composing with component -->
+<!-- <template>
   <div class="home">
     <h1>Home Component</h1>
     <Users />
@@ -26,7 +64,7 @@ export default {
   background-color: aquamarine;
   height: 500px;
 }
-</style>
+</style> -->
 
 <!-- <template>
   <div> -->
