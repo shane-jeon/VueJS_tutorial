@@ -4,7 +4,8 @@
     <!-- <HelloWorld msg="Welcome to Your Vue.js App" /> -->
     <!-- <Home data="Shane is here" msg="we are friends" /> -->
     <!-- <Home /> -->
-    <DataBind />
+    <!-- <DataBind /> -->
+    <Child v-bind:users="users" />
   </div>
 </template>
 
@@ -12,12 +13,24 @@
 // import HelloWorld from "./components/HelloWorld.vue";
 // import Home from "./components/Home.vue";
 // import Home from "./components/Home";
-import DataBind from "./components/DataBind";
+// import DataBind from "./components/DataBind";
+import Child from "./components/Child";
 export default {
   name: "App",
   components: {
     // Home,
-    DataBind,
+    // DataBind,
+    Child,
+  },
+  data() {
+    return {
+      users: [
+        { name: "shane", email: "shane@test.com" },
+        { name: "anne", email: "anne@test.com" },
+        { name: "tom", email: "tom@test.com" },
+        { name: "lily", email: "lily@test.com" },
+      ],
+    };
   },
   // components: {
   //   // HelloWorld,
